@@ -199,19 +199,16 @@
             display: none;
         }
 
-        .class1 img,
-        .class2 img,
-        .class3 img,
-        .class4 img,
-        .class5 img,
-        .class7 img,
-        .class8 img,
-        .class9 img,
-        .class10 img {
-            filter: brightness(60%);
-            cursor: not-allowed;
-
-        }
+    
+        .class1:hover,
+        .class4:hover,
+        .class2:hover,
+        .class3:hover,
+        .class5:hover,
+        .class8:hover,
+        .class7:hover,
+        .class9:hover,
+        .class10:hover,
 
         .class6:hover {
             transform: scale(1.05);
@@ -645,13 +642,13 @@
                 <div class="in-flex-box">
                 </div>
                 <div class="font-box">
-                    <div class="box-pic class1 box-pic1 light"></div>
+                    <div class="box-pic class1 box-pic1 "></div>
                     <div class="box-pic class2 box-pic2 light"></div>
                     <div class="box-pic class3 box-pic3 light"></div>
-                    <div class="box-pic class4 box-pic4 light"></div>
+                    <div class="box-pic class4 box-pic4 "></div>
                     <div class="box-pic class5 box-pic5 light"></div>
                     <div class="box-pic class6 box-pic6 "></div>
-                    <div class="box-pic class7 box-pic7 light"></div>
+                    <div class="box-pic class7 box-pic7"></div>
                     <div class="box-pic class8 box-pic8 light"></div>
                     <div class="box-pic class9 box-pic9 light"></div>
                     <div class="box-pic class10 box-pic10 light"></div>
@@ -1782,192 +1779,192 @@
 
 
         $(".class1").click(function () {
-            // control_display = 0
-            // choose_class = 1
-            // dot_control = true
-            // setword()
-            // $('.layout-img').remove()
-            // changeColor()
+            control_display = 0
+            choose_class = 1
+            dot_control = true
+            setword()
+            $('.layout-img').remove()
+            changeColor()
 
 
-            // if (control_btn == 4) {
+            if (control_btn == 4) {
 
-            //     if ($('.pic_number').length >= 1) {
-            //         let pic_length = $('.pic_number').length
-            //         let pic_app = 8 - pic_length
-            //         for (i = 0; i < pic_app; i++) {
-            //             $('.append_box_word').append(
+                if ($('.pic_number').length >= 1) {
+                    let pic_length = $('.pic_number').length
+                    let pic_app = 8 - pic_length
+                    for (i = 0; i < pic_app; i++) {
+                        $('.append_box_word').append(
 
-            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-            //             )
-            //         }
-            //     }
+                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+                        )
+                    }
+                }
 
-            //     $('.append_box_word').append(`
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
-            // `)
-            // }
-
-
+                $('.append_box_word').append(`
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.svg'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.svg'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.svg'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.svg'  draggable>
+            `)
+            }
 
 
 
-            // $(".out-layout").append(`<img src="img/page/a1c.png" class="layout-img"  alt="">`)
-            // $('.outside_frame').removeClass('opcZero')
-            // $('.classBox .btn').addClass('cover_class')
-            // $('.outside_frame_main').addClass('moveOut')
-            // convertSizeALL();
+
+
+            $(".out-layout").append(`<img src="img/page/a1c.png" class="layout-img"  alt="">`)
+            $('.outside_frame').removeClass('opcZero')
+            $('.classBox .btn').addClass('cover_class')
+            $('.outside_frame_main').addClass('moveOut')
+            convertSizeALL();
         })
 
         $(".class2").click(function () {
-            // control_display = 0
-            // choose_class = 2
-            // dot_control = true
+            control_display = 0
+            choose_class = 2
+            dot_control = true
 
-            // setword()
-            // changeColor()
-            // $('.layout-img').remove()
-            // console.log(control_btn)
-            // if (control_btn == 4) {
+            setword()
+            changeColor()
+            $('.layout-img').remove()
+            console.log(control_btn)
+            if (control_btn == 4) {
 
-            //     if ($('.pic_number').length >= 1) {
-            //         let pic_length = $('.pic_number').length
-            //         let pic_app = 8 - pic_length
-            //         for (i = 0; i < pic_app; i++) {
-            //             $('.append_box_word').append(
+                if ($('.pic_number').length >= 1) {
+                    let pic_length = $('.pic_number').length
+                    let pic_app = 8 - pic_length
+                    for (i = 0; i < pic_app; i++) {
+                        $('.append_box_word').append(
 
-            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-            //             )
-            //         }
-            //     }
-            //     $('.append_box_word').append(`
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
-            // `)
-            // }
-            // $(".out-layout").append(`<img src="img/page/a2c.png" class="layout-img"  alt="">`)
+                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+                        )
+                    }
+                }
+                $('.append_box_word').append(`
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            `)
+            }
+            $(".out-layout").append(`<img src="img/page/a2c.png" class="layout-img"  alt="">`)
 
-            // $('.outside_frame').removeClass('opcZero')
+            $('.outside_frame').removeClass('opcZero')
 
-            // $('.classBox .btn').addClass('cover_class')
-            // $('.outside_frame_main').addClass('moveOut')
-            // convertSizeALL();
+            $('.classBox .btn').addClass('cover_class')
+            $('.outside_frame_main').addClass('moveOut')
+            convertSizeALL();
 
         })
 
         $(".class3").click(function () {
-            // control_display = 0
-            // dot_control = true
+            control_display = 0
+            dot_control = true
 
-            // choose_class = 3
-            // setword()
-            // changeColor()
-            // $('.layout-img').remove()
-            // if (control_btn == 4) {
+            choose_class = 3
+            setword()
+            changeColor()
+            $('.layout-img').remove()
+            if (control_btn == 4) {
 
-            //     if ($('.pic_number').length >= 1) {
-            //         let pic_length = $('.pic_number').length
-            //         let pic_app = 8 - pic_length
-            //         for (i = 0; i < pic_app; i++) {
-            //             $('.append_box_word').append(
+                if ($('.pic_number').length >= 1) {
+                    let pic_length = $('.pic_number').length
+                    let pic_app = 8 - pic_length
+                    for (i = 0; i < pic_app; i++) {
+                        $('.append_box_word').append(
 
-            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-            //             )
-            //         }
-            //     }
-            //     $('.append_box_word').append(`
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
-            // `)
-            // }
-            // $(".out-layout").append(`<img src="img/page/a3c.png" class="layout-img"  alt="">`)
+                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+                        )
+                    }
+                }
+                $('.append_box_word').append(`
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            `)
+            }
+            $(".out-layout").append(`<img src="img/page/a3c.png" class="layout-img"  alt="">`)
 
-            // $('.outside_frame').removeClass('opcZero')
+            $('.outside_frame').removeClass('opcZero')
 
-            // $('.classBox .btn').addClass('cover_class')
-            // $('.outside_frame_main').addClass('moveOut')
-            // convertSizeALL();
+            $('.classBox .btn').addClass('cover_class')
+            $('.outside_frame_main').addClass('moveOut')
+            convertSizeALL();
 
 
         })
 
         $(".class4").click(function () {
-            // control_display = 0
-            // choose_class = 4
-            // dot_control = true
+            control_display = 0
+            choose_class = 4
+            dot_control = true
 
-            // setword()
-            // changeColor()
-            // $('.layout-img').remove()
-            // if (control_btn == 4) {
+            setword()
+            changeColor()
+            $('.layout-img').remove()
+            if (control_btn == 4) {
 
-            //     if ($('.pic_number').length >= 1) {
-            //         let pic_length = $('.pic_number').length
-            //         let pic_app = 8 - pic_length
-            //         for (i = 0; i < pic_app; i++) {
-            //             $('.append_box_word').append(
+                if ($('.pic_number').length >= 1) {
+                    let pic_length = $('.pic_number').length
+                    let pic_app = 8 - pic_length
+                    for (i = 0; i < pic_app; i++) {
+                        $('.append_box_word').append(
 
-            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-            //             )
-            //         }
-            //     }
-            //     $('.append_box_word').append(`
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
-            // `)
-            // }
-            // $(".out-layout").append(`<img src="img/page/a4c.png" class="layout-img"  alt="">`)
+                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+                        )
+                    }
+                }
+                $('.append_box_word').append(`
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            `)
+            }
+            $(".out-layout").append(`<img src="img/page/a4c.png" class="layout-img"  alt="">`)
 
-            // $('.outside_frame').removeClass('opcZero')
+            $('.outside_frame').removeClass('opcZero')
 
-            // $('.classBox .btn').addClass('cover_class')
-            // $('.outside_frame_main').addClass('moveOut')
-            // convertSizeALL();
+            $('.classBox .btn').addClass('cover_class')
+            $('.outside_frame_main').addClass('moveOut')
+            convertSizeALL();
 
         })
         $(".class5").click(function () {
-            // control_display = 0
-            // dot_control = true
+            control_display = 0
+            dot_control = true
 
-            // choose_class = 5
-            // setword()
-            // changeColor()
-            // $('.layout-img').remove()
-            // if (control_btn == 4) {
+            choose_class = 5
+            setword()
+            changeColor()
+            $('.layout-img').remove()
+            if (control_btn == 4) {
 
-            //     if ($('.pic_number').length >= 1) {
-            //         let pic_length = $('.pic_number').length
-            //         let pic_app = 8 - pic_length
-            //         for (i = 0; i < pic_app; i++) {
-            //             $('.append_box_word').append(
+                if ($('.pic_number').length >= 1) {
+                    let pic_length = $('.pic_number').length
+                    let pic_app = 8 - pic_length
+                    for (i = 0; i < pic_app; i++) {
+                        $('.append_box_word').append(
 
-            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-            //             )
-            //         }
-            //     }
-            //     $('.append_box_word').append(`
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
-            // `)
-            // }
-            // $(".out-layout").append(`<img src="img/page/a5c.png" class="layout-img"  alt="">`)
+                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+                        )
+                    }
+                }
+                $('.append_box_word').append(`
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            `)
+            }
+            $(".out-layout").append(`<img src="img/page/a5c.png" class="layout-img"  alt="">`)
 
-            // $('.outside_frame').removeClass('opcZero')
+            $('.outside_frame').removeClass('opcZero')
 
-            // $('.classBox .btn').addClass('cover_class')
-            // $('.outside_frame_main').addClass('moveOut')
-            // convertSizeALL();
+            $('.classBox .btn').addClass('cover_class')
+            $('.outside_frame_main').addClass('moveOut')
+            convertSizeALL();
 
         })
 
@@ -2008,150 +2005,150 @@
 
         })
         $(".class7").click(function () {
-            // control_display = 0
-            // choose_class = 7
-            // dot_control = true
+            control_display = 0
+            choose_class = 7
+            dot_control = true
 
-            // setword()
+            setword()
 
-            // changeColor()
-            // $('.layout-img').remove()
-            // if (control_btn == 4) {
-            //     console.log(b4_inline_style)
-            //     if ($('.pic_number').length >= 1) {
-            //         let pic_length = $('.pic_number').length
-            //         let pic_app = 8 - pic_length
-            //         for (i = 0; i < pic_app; i++) {
-            //             $('.append_box_word').append(
+            changeColor()
+            $('.layout-img').remove()
+            if (control_btn == 4) {
+                console.log(b4_inline_style)
+                if ($('.pic_number').length >= 1) {
+                    let pic_length = $('.pic_number').length
+                    let pic_app = 8 - pic_length
+                    for (i = 0; i < pic_app; i++) {
+                        $('.append_box_word').append(
 
-            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-            //             )
-            //         }
-            //     }
-            //     $('.append_box_word').append(`
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
-            // `)
-            // }
-            // $(".out-layout").append(`<img src="img/page/a7c.png" class="layout-img"   alt="">`)
+                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+                        )
+                    }
+                }
+                $('.append_box_word').append(`
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            `)
+            }
+            $(".out-layout").append(`<img src="img/page/a7c.png" class="layout-img"   alt="">`)
 
-            // $('.outside_frame').removeClass('opcZero')
+            $('.outside_frame').removeClass('opcZero')
 
-            // $('.classBox .btn').addClass('cover_class')
-            // $('.outside_frame_main').addClass('moveOut')
-            // convertSizeALL();
+            $('.classBox .btn').addClass('cover_class')
+            $('.outside_frame_main').addClass('moveOut')
+            convertSizeALL();
 
         })
 
         $(".class8").click(function () {
-            // control_display = 0
-            // choose_class = 8
-            // dot_control = true
+            control_display = 0
+            choose_class = 8
+            dot_control = true
 
-            // setword()
-            // changeColor()
-            // $('.layout-img').remove()
-            // if (control_btn == 4) {
+            setword()
+            changeColor()
+            $('.layout-img').remove()
+            if (control_btn == 4) {
 
-            //     if ($('.pic_number').length >= 1) {
-            //         let pic_length = $('.pic_number').length
-            //         let pic_app = 8 - pic_length
-            //         for (i = 0; i < pic_app; i++) {
-            //             $('.append_box_word').append(
+                if ($('.pic_number').length >= 1) {
+                    let pic_length = $('.pic_number').length
+                    let pic_app = 8 - pic_length
+                    for (i = 0; i < pic_app; i++) {
+                        $('.append_box_word').append(
 
-            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-            //             )
-            //         }
-            //     }
-            //     $('.append_box_word').append(`
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
-            // `)
-            // }
-            // $(".out-layout").append(`<img src="img/page/a8c.png" class="layout-img"  alt="">`)
+                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+                        )
+                    }
+                }
+                $('.append_box_word').append(`
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            `)
+            }
+            $(".out-layout").append(`<img src="img/page/a8c.png" class="layout-img"  alt="">`)
 
-            // $('.outside_frame').removeClass('opcZero')
+            $('.outside_frame').removeClass('opcZero')
 
-            // $('.classBox .btn').addClass('cover_class')
-            // $('.outside_frame_main').addClass('moveOut')
-            // convertSizeALL();
+            $('.classBox .btn').addClass('cover_class')
+            $('.outside_frame_main').addClass('moveOut')
+            convertSizeALL();
 
         })
         $(".class9").click(function () {
-            // control_display = 0
-            // choose_class = 9
-            // dot_control = true
+            control_display = 0
+            choose_class = 9
+            dot_control = true
 
-            // setword()
-            // changeColor()
-            // $('.layout-img').remove()
-            // if (control_btn == 4) {
+            setword()
+            changeColor()
+            $('.layout-img').remove()
+            if (control_btn == 4) {
 
-            //     if ($('.pic_number').length >= 1) {
-            //         let pic_length = $('.pic_number').length
-            //         let pic_app = 8 - pic_length
-            //         for (i = 0; i < pic_app; i++) {
-            //             $('.append_box_word').append(
+                if ($('.pic_number').length >= 1) {
+                    let pic_length = $('.pic_number').length
+                    let pic_app = 8 - pic_length
+                    for (i = 0; i < pic_app; i++) {
+                        $('.append_box_word').append(
 
-            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-            //             )
-            //         }
-            //     }
-            //     $('.append_box_word').append(`
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
-            // `)
-            // }
-            // $(".out-layout").append(`<img src="img/page/a9c.png" class="layout-img"  alt="">`)
+                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+                        )
+                    }
+                }
+                $('.append_box_word').append(`
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            `)
+            }
+            $(".out-layout").append(`<img src="img/page/a9c.png" class="layout-img"  alt="">`)
 
-            // $('.outside_frame').removeClass('opcZero')
+            $('.outside_frame').removeClass('opcZero')
 
-            // $('.classBox .btn').addClass('cover_class')
-            // $('.outside_frame_main').addClass('moveOut')
-            // convertSizeALL();
+            $('.classBox .btn').addClass('cover_class')
+            $('.outside_frame_main').addClass('moveOut')
+            convertSizeALL();
 
         })
 
         $(".class10").click(function () {
-            // control_display = 0
-            // choose_class = 10
-            // dot_control = true
+            control_display = 0
+            choose_class = 10
+            dot_control = true
 
-            // setword()
-            // changeColor()
-            // $('.layout-img').remove()
-            // if (control_btn == 4) {
+            setword()
+            changeColor()
+            $('.layout-img').remove()
+            if (control_btn == 4) {
 
-            //     if ($('.pic_number').length >= 1) {
-            //         let pic_length = $('.pic_number').length
-            //         let pic_app = 8 - pic_length
-            //         for (i = 0; i < pic_app; i++) {
-            //             $('.append_box_word').append(
+                if ($('.pic_number').length >= 1) {
+                    let pic_length = $('.pic_number').length
+                    let pic_app = 8 - pic_length
+                    for (i = 0; i < pic_app; i++) {
+                        $('.append_box_word').append(
 
-            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-            //             )
-            //         }
-            //     }
-            //     $('.append_box_word').append(`
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
-            // `)
-            // }
-            // $(".out-layout").append(`<img src="img/page/a10c.png" class="layout-img"  alt="">`)
+                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+                        )
+                    }
+                }
+                $('.append_box_word').append(`
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            `)
+            }
+            $(".out-layout").append(`<img src="img/page/a10c.png" class="layout-img"  alt="">`)
 
-            // $('.outside_frame').removeClass('opcZero')
+            $('.outside_frame').removeClass('opcZero')
 
-            // $('.classBox .btn').addClass('cover_class')
-            // $('.outside_frame_main').addClass('moveOut')
-            // convertSizeALL();
+            $('.classBox .btn').addClass('cover_class')
+            $('.outside_frame_main').addClass('moveOut')
+            convertSizeALL();
 
 
         })
