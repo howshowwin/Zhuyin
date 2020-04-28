@@ -2274,15 +2274,15 @@
             odY = e.targetTouches[0].clientY - e.target.height / 2
         }
         var push = false
-        var imagearray = []
         function pushimg(e) {
             let yoyo = $('.canvas_wrapper').offset().left
             let yoyot = $('.canvas_wrapper').offset().top
-            imagearray.push(movingImage)
-            console.log(imagearray)
-            let imagearrayimage =  imagearray[ imagearray.length-1]
+
             let offsetY = odY
             let offsetX = odX
+            console.log(movingImage.src)
+            let nowsrc = movingImage.src
+
             document.body.removeChild(jijo);
             let h
             if (e.changedTouches[0].clientY - yoyot - e.target.height / 2 < 0) {
@@ -2302,28 +2302,34 @@
             else {
                 w = e.changedTouches[0].clientX - yoyo - e.target.width
             }
-            const image_qq = new fabric.Image(imagearrayimage, {
-                width: imagearrayimage.naturalWidth,
-                height: imagearrayimage.naturalHeight,
-                // scaleX: imagearrayimage.width / imagearrayimage.naturalWidth,
-                // scaleY: imagearrayimage.height / imagearrayimage.naturalHeight,
-                top: h,
-                left: w + imagearrayimage.naturalWidth / 4,
-                // top: (offsetY - imgDragOffset.offsetY + jiji * 8.5) < 0 ? 35 : (offsetY - imgDragOffset.offsetY + jiji * 8.5),
-                // left: (offsetX - imgDragOffset.offsetX + popo),
-                lockScalingFlip: true
+            fabric.Image.fromURL(nowsrc, function (myImg) {
+                var img1 = myImg.set({
+                    width: movingImage.naturalWidth,
+                    height: movingImage.naturalHeight,
+                    scaleX: movingImage.width / movingImage.naturalWidth,
+                    scaleY: movingImage.height / movingImage.naturalHeight,
+                    top: h,
+                    left: w + movingImage.naturalWidth / 4,
+                    // top: (offsetY - imgDragOffset.offsetY + jiji * 8.5) < 0 ? 35 : (offsetY - imgDragOffset.offsetY + jiji * 8.5),
+                    // left: (offsetX - imgDragOffset.offsetX + popo),
+                    lockScalingFlip: true
+                });
+                // canvas.add(image_qq)
+                img1.set({
+                    borderColor: 'rgba(0,0,0,0)'
+                })
+                allpic = allpic + 1
+                canvas.add(img1)
+
+                image_q.push(img1)
+
             })
 
 
-            // canvas.add(image_qq)
-            image_qq.set({
-                borderColor: 'rgba(0,0,0,0)'
-            })
-            allpic = allpic + 1
-            canvas.add(image_qq)
 
-            image_q.push(image_qq)
         }
+
+
 
 
         var popo = $('.append_box_word').offset().left
