@@ -2314,7 +2314,12 @@
                     // left: (offsetX - imgDragOffset.offsetX + popo),
                     lockScalingFlip: true
                 });
+                
                 // canvas.add(image_qq)
+                console.log(img1._element.naturalHeight)
+                img1._element.naturalHeight = movingImage.height
+                img1._element.naturalWidth = movingImage.width
+
                 img1.set({
                     borderColor: 'rgba(0,0,0,0)'
                 })
