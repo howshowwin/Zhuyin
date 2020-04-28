@@ -583,7 +583,10 @@
             opacity: 0.5;
         }
 
-
+        .opc0{
+            opacity: 0;
+            pointer-events: none;
+        }
         .pic_number {
             -webkit-touch-callout: none !important;
             -webkit-user-select: none !important;
@@ -703,7 +706,7 @@
 
         </div>
 
-        <div class="display_none nono"></div>
+        <div class="opc0 nono"></div>
 
     </div>
 
@@ -2321,7 +2324,7 @@
             })
             // canvas.add(image_qq)
             let copyObj = movingImage.cloneNode(true);
-            document.body.appendChild(copyObj);
+            // document.body.appendChild(copyObj);
             $('.nono').append(copyObj)
 
             image_qq.set({
