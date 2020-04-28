@@ -38,8 +38,8 @@ function convertSizeALL(className) {
     $("body").css("margin-left", (iw - Math.round(w * sRatio)) / 2);
     $("body").css("margin-top", "0");
     $("body").css("zoom", "100%");
-    canvas.setHeight(900*sRatio);
-    canvas.setWidth(1340*sRatio);
+    canvas.setHeight(780*sRatio);
+    canvas.setWidth(1310*sRatio);
     sR = Math.min(xRatio, yRatio);
     spcial_move = (iw - Math.round(w * sRatio)) / 2
     b4_inline_style = `width:${Math.round(90 * sRatio) + "px"};height:auto;`
@@ -65,9 +65,9 @@ function convertSizeALL(className) {
     $('.outside_frame_main').css({ width: Math.round(1920 * sRatio), height: Math.round(900 * sRatio) })
 
     $('.append_box_word').css({ width: Math.round(300 * sRatio), height: Math.round(300 * sRatio) })
-    $('.canvas_wrapper ').css({ width: Math.round(1340 * sRatio), height: Math.round(900 * sRatio) })
-    canvasHH = Math.round(847 * sRatio)
-    canvasWW = Math.round(1340 * sRatio)
+    $('.canvas_wrapper ').css({ width: Math.round(1310 * sRatio), height: Math.round(780 * sRatio) })
+    canvasHH = Math.round(780 * sRatio)
+    canvasWW = Math.round(1310 * sRatio)
     $('.next img,.pre img').css({ width: Math.round(40 * sRatio), height: Math.round(40 * sRatio) })
     $('.ab-bb-next img,.ab-bb-pre img').css({ width: Math.round(40 * sRatio), height: Math.round(40 * sRatio) })
     $('.classindex img').css({ width: Math.round(168 * sRatio), height: Math.round(168 * sRatio) })
@@ -124,9 +124,9 @@ function convertSizeALL(className) {
 
     });
 
-    canvas.discardActiveObject().renderAll()
     // canvas.discardActiveObject().renderAll()
-    canvas.renderAll()
+    // // canvas.discardActiveObject().renderAll()
+    // canvas.renderAll()
     setword()
     width_img = change_img
     // width_img = $("#defaultImg").css('width')

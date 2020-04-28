@@ -169,7 +169,7 @@
         .canvas_wrapper {
             overflow: hidden;
             position: absolute;
-            top: 2%;
+            top: 6%;
             left: 3%;
             /* border: 2px solid red; */
 
@@ -199,16 +199,19 @@
             display: none;
         }
 
-    
-        .class1:hover,
-        .class4:hover,
-        .class2:hover,
-        .class3:hover,
-        .class5:hover,
-        .class8:hover,
-        .class7:hover,
-        .class9:hover,
-        .class10:hover,
+        .class1 img,
+        .class2 img,
+        .class3 img,
+        .class4 img,
+        .class5 img,
+        .class7 img,
+        .class8 img,
+        .class9 img,
+        .class10 img {
+            filter: brightness(60%);
+            cursor: not-allowed;
+
+        }
 
         .class6:hover {
             transform: scale(1.05);
@@ -219,8 +222,8 @@
         .light {
             /* pointer-events: none; */
             /* cursor: not-allowed; */
-            /* cursor: not-allowed;
-            filter: brightness(102%); */
+            cursor: not-allowed;
+            filter: brightness(102%);
 
         }
 
@@ -575,6 +578,10 @@
 
         }
 
+        .canvas-container {
+            background: red;
+            opacity: 0.5;
+        }
 
 
         .pic_number {
@@ -642,13 +649,13 @@
                 <div class="in-flex-box">
                 </div>
                 <div class="font-box">
-                    <div class="box-pic class1 box-pic1 "></div>
+                    <div class="box-pic class1 box-pic1 light"></div>
                     <div class="box-pic class2 box-pic2 light"></div>
                     <div class="box-pic class3 box-pic3 light"></div>
-                    <div class="box-pic class4 box-pic4 "></div>
+                    <div class="box-pic class4 box-pic4 light"></div>
                     <div class="box-pic class5 box-pic5 light"></div>
                     <div class="box-pic class6 box-pic6 "></div>
-                    <div class="box-pic class7 box-pic7"></div>
+                    <div class="box-pic class7 box-pic7 light"></div>
                     <div class="box-pic class8 box-pic8 light"></div>
                     <div class="box-pic class9 box-pic9 light"></div>
                     <div class="box-pic class10 box-pic10 light"></div>
@@ -746,7 +753,6 @@
         var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
         var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 
-
         //     // function Close() {
         //     //     window.open('', '_self', '');
         //     //     // setInterval(function () { window.close() }
@@ -796,10 +802,10 @@
         var close_topright = 50 * sRatio
 
         // 
+
         var canvas = new fabric.Canvas('canvas');
         canvas.setHeight(4000);
         canvas.setWidth(6000);
-
         var body = document.querySelector('body')
 
 
@@ -840,7 +846,6 @@
 
 
         var setword = function () {
-
 
             var setData = function (a, b, c, d) {
 
@@ -918,9 +923,10 @@
                     page_area_1 += ` <img id="defaultImg" style=${inline_style} class="pic_number grid${k + 1}" src='img/${array_all_cb[control_display][k]}'  draggable>`
                 }
             }
-
             $(".append_box_word").empty()
+
             $(".append_box_word").append(page_area_1)
+
 
             page = 0
 
@@ -1235,6 +1241,7 @@
 
 
             setword()
+            canvas.deactivateAll().renderAll()
 
         })
         $('.btn_words, .choose_words').click(function () {
@@ -1300,6 +1307,7 @@
             dot_control = true
 
             setword()
+            canvas.deactivateAll().renderAll()
 
 
         })
@@ -1367,6 +1375,8 @@
             dot_control = true
 
             setword()
+            canvas.deactivateAll().renderAll()
+
         })
 
         $('.btn_symbol, .choose_symbol').click(function () {
@@ -1432,6 +1442,7 @@
             dot_control = true
 
             setword()
+            canvas.deactivateAll().renderAll()
 
             if ($('.pic_number').length >= 1) {
                 let pic_length = $('.pic_number').length
@@ -1779,192 +1790,192 @@
 
 
         $(".class1").click(function () {
-            control_display = 0
-            choose_class = 1
-            dot_control = true
-            setword()
-            $('.layout-img').remove()
-            changeColor()
+            // control_display = 0
+            // choose_class = 1
+            // dot_control = true
+            // setword()
+            // $('.layout-img').remove()
+            // changeColor()
 
 
-            if (control_btn == 4) {
+            // if (control_btn == 4) {
 
-                if ($('.pic_number').length >= 1) {
-                    let pic_length = $('.pic_number').length
-                    let pic_app = 8 - pic_length
-                    for (i = 0; i < pic_app; i++) {
-                        $('.append_box_word').append(
+            //     if ($('.pic_number').length >= 1) {
+            //         let pic_length = $('.pic_number').length
+            //         let pic_app = 8 - pic_length
+            //         for (i = 0; i < pic_app; i++) {
+            //             $('.append_box_word').append(
 
-                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-                        )
-                    }
-                }
+            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+            //             )
+            //         }
+            //     }
 
-                $('.append_box_word').append(`
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.svg'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.svg'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.svg'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.svg'  draggable>
-            `)
-            }
-
-
+            //     $('.append_box_word').append(`
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            // `)
+            // }
 
 
 
-            $(".out-layout").append(`<img src="img/page/a1c.png" class="layout-img"  alt="">`)
-            $('.outside_frame').removeClass('opcZero')
-            $('.classBox .btn').addClass('cover_class')
-            $('.outside_frame_main').addClass('moveOut')
-            convertSizeALL();
+
+
+            // $(".out-layout").append(`<img src="img/page/a1c.png" class="layout-img"  alt="">`)
+            // $('.outside_frame').removeClass('opcZero')
+            // $('.classBox .btn').addClass('cover_class')
+            // $('.outside_frame_main').addClass('moveOut')
+            // convertSizeALL();
         })
 
         $(".class2").click(function () {
-            control_display = 0
-            choose_class = 2
-            dot_control = true
+            // control_display = 0
+            // choose_class = 2
+            // dot_control = true
 
-            setword()
-            changeColor()
-            $('.layout-img').remove()
-            console.log(control_btn)
-            if (control_btn == 4) {
+            // setword()
+            // changeColor()
+            // $('.layout-img').remove()
+            // console.log(control_btn)
+            // if (control_btn == 4) {
 
-                if ($('.pic_number').length >= 1) {
-                    let pic_length = $('.pic_number').length
-                    let pic_app = 8 - pic_length
-                    for (i = 0; i < pic_app; i++) {
-                        $('.append_box_word').append(
+            //     if ($('.pic_number').length >= 1) {
+            //         let pic_length = $('.pic_number').length
+            //         let pic_app = 8 - pic_length
+            //         for (i = 0; i < pic_app; i++) {
+            //             $('.append_box_word').append(
 
-                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-                        )
-                    }
-                }
-                $('.append_box_word').append(`
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
-            `)
-            }
-            $(".out-layout").append(`<img src="img/page/a2c.png" class="layout-img"  alt="">`)
+            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+            //             )
+            //         }
+            //     }
+            //     $('.append_box_word').append(`
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            // `)
+            // }
+            // $(".out-layout").append(`<img src="img/page/a2c.png" class="layout-img"  alt="">`)
 
-            $('.outside_frame').removeClass('opcZero')
+            // $('.outside_frame').removeClass('opcZero')
 
-            $('.classBox .btn').addClass('cover_class')
-            $('.outside_frame_main').addClass('moveOut')
-            convertSizeALL();
+            // $('.classBox .btn').addClass('cover_class')
+            // $('.outside_frame_main').addClass('moveOut')
+            // convertSizeALL();
 
         })
 
         $(".class3").click(function () {
-            control_display = 0
-            dot_control = true
+            // control_display = 0
+            // dot_control = true
 
-            choose_class = 3
-            setword()
-            changeColor()
-            $('.layout-img').remove()
-            if (control_btn == 4) {
+            // choose_class = 3
+            // setword()
+            // changeColor()
+            // $('.layout-img').remove()
+            // if (control_btn == 4) {
 
-                if ($('.pic_number').length >= 1) {
-                    let pic_length = $('.pic_number').length
-                    let pic_app = 8 - pic_length
-                    for (i = 0; i < pic_app; i++) {
-                        $('.append_box_word').append(
+            //     if ($('.pic_number').length >= 1) {
+            //         let pic_length = $('.pic_number').length
+            //         let pic_app = 8 - pic_length
+            //         for (i = 0; i < pic_app; i++) {
+            //             $('.append_box_word').append(
 
-                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-                        )
-                    }
-                }
-                $('.append_box_word').append(`
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
-            `)
-            }
-            $(".out-layout").append(`<img src="img/page/a3c.png" class="layout-img"  alt="">`)
+            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+            //             )
+            //         }
+            //     }
+            //     $('.append_box_word').append(`
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            // `)
+            // }
+            // $(".out-layout").append(`<img src="img/page/a3c.png" class="layout-img"  alt="">`)
 
-            $('.outside_frame').removeClass('opcZero')
+            // $('.outside_frame').removeClass('opcZero')
 
-            $('.classBox .btn').addClass('cover_class')
-            $('.outside_frame_main').addClass('moveOut')
-            convertSizeALL();
+            // $('.classBox .btn').addClass('cover_class')
+            // $('.outside_frame_main').addClass('moveOut')
+            // convertSizeALL();
 
 
         })
 
         $(".class4").click(function () {
-            control_display = 0
-            choose_class = 4
-            dot_control = true
+            // control_display = 0
+            // choose_class = 4
+            // dot_control = true
 
-            setword()
-            changeColor()
-            $('.layout-img').remove()
-            if (control_btn == 4) {
+            // setword()
+            // changeColor()
+            // $('.layout-img').remove()
+            // if (control_btn == 4) {
 
-                if ($('.pic_number').length >= 1) {
-                    let pic_length = $('.pic_number').length
-                    let pic_app = 8 - pic_length
-                    for (i = 0; i < pic_app; i++) {
-                        $('.append_box_word').append(
+            //     if ($('.pic_number').length >= 1) {
+            //         let pic_length = $('.pic_number').length
+            //         let pic_app = 8 - pic_length
+            //         for (i = 0; i < pic_app; i++) {
+            //             $('.append_box_word').append(
 
-                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-                        )
-                    }
-                }
-                $('.append_box_word').append(`
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
-            `)
-            }
-            $(".out-layout").append(`<img src="img/page/a4c.png" class="layout-img"  alt="">`)
+            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+            //             )
+            //         }
+            //     }
+            //     $('.append_box_word').append(`
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            // `)
+            // }
+            // $(".out-layout").append(`<img src="img/page/a4c.png" class="layout-img"  alt="">`)
 
-            $('.outside_frame').removeClass('opcZero')
+            // $('.outside_frame').removeClass('opcZero')
 
-            $('.classBox .btn').addClass('cover_class')
-            $('.outside_frame_main').addClass('moveOut')
-            convertSizeALL();
+            // $('.classBox .btn').addClass('cover_class')
+            // $('.outside_frame_main').addClass('moveOut')
+            // convertSizeALL();
 
         })
         $(".class5").click(function () {
-            control_display = 0
-            dot_control = true
+            // control_display = 0
+            // dot_control = true
 
-            choose_class = 5
-            setword()
-            changeColor()
-            $('.layout-img').remove()
-            if (control_btn == 4) {
+            // choose_class = 5
+            // setword()
+            // changeColor()
+            // $('.layout-img').remove()
+            // if (control_btn == 4) {
 
-                if ($('.pic_number').length >= 1) {
-                    let pic_length = $('.pic_number').length
-                    let pic_app = 8 - pic_length
-                    for (i = 0; i < pic_app; i++) {
-                        $('.append_box_word').append(
+            //     if ($('.pic_number').length >= 1) {
+            //         let pic_length = $('.pic_number').length
+            //         let pic_app = 8 - pic_length
+            //         for (i = 0; i < pic_app; i++) {
+            //             $('.append_box_word').append(
 
-                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-                        )
-                    }
-                }
-                $('.append_box_word').append(`
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
-            `)
-            }
-            $(".out-layout").append(`<img src="img/page/a5c.png" class="layout-img"  alt="">`)
+            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+            //             )
+            //         }
+            //     }
+            //     $('.append_box_word').append(`
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            // `)
+            // }
+            // $(".out-layout").append(`<img src="img/page/a5c.png" class="layout-img"  alt="">`)
 
-            $('.outside_frame').removeClass('opcZero')
+            // $('.outside_frame').removeClass('opcZero')
 
-            $('.classBox .btn').addClass('cover_class')
-            $('.outside_frame_main').addClass('moveOut')
-            convertSizeALL();
+            // $('.classBox .btn').addClass('cover_class')
+            // $('.outside_frame_main').addClass('moveOut')
+            // convertSizeALL();
 
         })
 
@@ -1988,6 +1999,7 @@
                         )
                     }
                 }
+
                 $('.append_box_word').append(`
             <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
             <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
@@ -2001,154 +2013,156 @@
 
             $('.classBox .btn').addClass('cover_class')
             $('.outside_frame_main').addClass('moveOut')
+            canvas.discardActiveObject();
+            canvas.renderAll();
             convertSizeALL();
 
         })
         $(".class7").click(function () {
-            control_display = 0
-            choose_class = 7
-            dot_control = true
+            // control_display = 0
+            // choose_class = 7
+            // dot_control = true
 
-            setword()
+            // setword()
 
-            changeColor()
-            $('.layout-img').remove()
-            if (control_btn == 4) {
-                console.log(b4_inline_style)
-                if ($('.pic_number').length >= 1) {
-                    let pic_length = $('.pic_number').length
-                    let pic_app = 8 - pic_length
-                    for (i = 0; i < pic_app; i++) {
-                        $('.append_box_word').append(
+            // changeColor()
+            // $('.layout-img').remove()
+            // if (control_btn == 4) {
+            //     console.log(b4_inline_style)
+            //     if ($('.pic_number').length >= 1) {
+            //         let pic_length = $('.pic_number').length
+            //         let pic_app = 8 - pic_length
+            //         for (i = 0; i < pic_app; i++) {
+            //             $('.append_box_word').append(
 
-                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-                        )
-                    }
-                }
-                $('.append_box_word').append(`
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
-            `)
-            }
-            $(".out-layout").append(`<img src="img/page/a7c.png" class="layout-img"   alt="">`)
+            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+            //             )
+            //         }
+            //     }
+            //     $('.append_box_word').append(`
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            // `)
+            // }
+            // $(".out-layout").append(`<img src="img/page/a7c.png" class="layout-img"   alt="">`)
 
-            $('.outside_frame').removeClass('opcZero')
+            // $('.outside_frame').removeClass('opcZero')
 
-            $('.classBox .btn').addClass('cover_class')
-            $('.outside_frame_main').addClass('moveOut')
-            convertSizeALL();
+            // $('.classBox .btn').addClass('cover_class')
+            // $('.outside_frame_main').addClass('moveOut')
+            // convertSizeALL();
 
         })
 
         $(".class8").click(function () {
-            control_display = 0
-            choose_class = 8
-            dot_control = true
+            // control_display = 0
+            // choose_class = 8
+            // dot_control = true
 
-            setword()
-            changeColor()
-            $('.layout-img').remove()
-            if (control_btn == 4) {
+            // setword()
+            // changeColor()
+            // $('.layout-img').remove()
+            // if (control_btn == 4) {
 
-                if ($('.pic_number').length >= 1) {
-                    let pic_length = $('.pic_number').length
-                    let pic_app = 8 - pic_length
-                    for (i = 0; i < pic_app; i++) {
-                        $('.append_box_word').append(
+            //     if ($('.pic_number').length >= 1) {
+            //         let pic_length = $('.pic_number').length
+            //         let pic_app = 8 - pic_length
+            //         for (i = 0; i < pic_app; i++) {
+            //             $('.append_box_word').append(
 
-                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-                        )
-                    }
-                }
-                $('.append_box_word').append(`
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
-            `)
-            }
-            $(".out-layout").append(`<img src="img/page/a8c.png" class="layout-img"  alt="">`)
+            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+            //             )
+            //         }
+            //     }
+            //     $('.append_box_word').append(`
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            // `)
+            // }
+            // $(".out-layout").append(`<img src="img/page/a8c.png" class="layout-img"  alt="">`)
 
-            $('.outside_frame').removeClass('opcZero')
+            // $('.outside_frame').removeClass('opcZero')
 
-            $('.classBox .btn').addClass('cover_class')
-            $('.outside_frame_main').addClass('moveOut')
-            convertSizeALL();
+            // $('.classBox .btn').addClass('cover_class')
+            // $('.outside_frame_main').addClass('moveOut')
+            // convertSizeALL();
 
         })
         $(".class9").click(function () {
-            control_display = 0
-            choose_class = 9
-            dot_control = true
+            // control_display = 0
+            // choose_class = 9
+            // dot_control = true
 
-            setword()
-            changeColor()
-            $('.layout-img').remove()
-            if (control_btn == 4) {
+            // setword()
+            // changeColor()
+            // $('.layout-img').remove()
+            // if (control_btn == 4) {
 
-                if ($('.pic_number').length >= 1) {
-                    let pic_length = $('.pic_number').length
-                    let pic_app = 8 - pic_length
-                    for (i = 0; i < pic_app; i++) {
-                        $('.append_box_word').append(
+            //     if ($('.pic_number').length >= 1) {
+            //         let pic_length = $('.pic_number').length
+            //         let pic_app = 8 - pic_length
+            //         for (i = 0; i < pic_app; i++) {
+            //             $('.append_box_word').append(
 
-                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-                        )
-                    }
-                }
-                $('.append_box_word').append(`
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
-            `)
-            }
-            $(".out-layout").append(`<img src="img/page/a9c.png" class="layout-img"  alt="">`)
+            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+            //             )
+            //         }
+            //     }
+            //     $('.append_box_word').append(`
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            // `)
+            // }
+            // $(".out-layout").append(`<img src="img/page/a9c.png" class="layout-img"  alt="">`)
 
-            $('.outside_frame').removeClass('opcZero')
+            // $('.outside_frame').removeClass('opcZero')
 
-            $('.classBox .btn').addClass('cover_class')
-            $('.outside_frame_main').addClass('moveOut')
-            convertSizeALL();
+            // $('.classBox .btn').addClass('cover_class')
+            // $('.outside_frame_main').addClass('moveOut')
+            // convertSizeALL();
 
         })
 
         $(".class10").click(function () {
-            control_display = 0
-            choose_class = 10
-            dot_control = true
+            // control_display = 0
+            // choose_class = 10
+            // dot_control = true
 
-            setword()
-            changeColor()
-            $('.layout-img').remove()
-            if (control_btn == 4) {
+            // setword()
+            // changeColor()
+            // $('.layout-img').remove()
+            // if (control_btn == 4) {
 
-                if ($('.pic_number').length >= 1) {
-                    let pic_length = $('.pic_number').length
-                    let pic_app = 8 - pic_length
-                    for (i = 0; i < pic_app; i++) {
-                        $('.append_box_word').append(
+            //     if ($('.pic_number').length >= 1) {
+            //         let pic_length = $('.pic_number').length
+            //         let pic_app = 8 - pic_length
+            //         for (i = 0; i < pic_app; i++) {
+            //             $('.append_box_word').append(
 
-                            `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
-                        )
-                    }
-                }
-                $('.append_box_word').append(`
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
-            `)
-            }
-            $(".out-layout").append(`<img src="img/page/a10c.png" class="layout-img"  alt="">`)
+            //                 `<img id="defaultImg" style=${b4_inline_style} class="pic_number grid${pic_length + i + 1}"'  draggable>`
+            //             )
+            //         }
+            //     }
+            //     $('.append_box_word').append(`
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
+            // <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            // `)
+            // }
+            // $(".out-layout").append(`<img src="img/page/a10c.png" class="layout-img"  alt="">`)
 
-            $('.outside_frame').removeClass('opcZero')
+            // $('.outside_frame').removeClass('opcZero')
 
-            $('.classBox .btn').addClass('cover_class')
-            $('.outside_frame_main').addClass('moveOut')
-            convertSizeALL();
+            // $('.classBox .btn').addClass('cover_class')
+            // $('.outside_frame_main').addClass('moveOut')
+            // convertSizeALL();
 
 
         })
@@ -2210,7 +2224,8 @@
                 oldimgX = movingImage.width / movingImage.naturalWidth
                 oldimgY = movingImage.height / movingImage.naturalHeight
             }
-
+            canvas.discardActiveObject();
+            canvas.renderAll();
             // console.log(imgDragOffset)
         }
         var jijo = ''
@@ -2240,6 +2255,8 @@
             copyObj.style.top = e.targetTouches[0].clientY - e.target.height / 2 + "px"
             copyObj.style.left = e.targetTouches[0].clientX - e.target.width / 2 - spcial_move + "px"
             jijo = copyObj
+            canvas.discardActiveObject();
+            canvas.renderAll();
         }
         var odX
         var odY
@@ -2257,15 +2274,16 @@
             odY = e.targetTouches[0].clientY - e.target.height / 2
         }
         var push = false
-
+        var imagearray = []
         function pushimg(e) {
             let yoyo = $('.canvas_wrapper').offset().left
             let yoyot = $('.canvas_wrapper').offset().top
-
+            imagearray.push(movingImage)
+            console.log(imagearray)
+            let imagearrayimage =  imagearray[ imagearray.length-1]
             let offsetY = odY
             let offsetX = odX
             document.body.removeChild(jijo);
-            console.log(spcial_move)
             let h
             if (e.changedTouches[0].clientY - yoyot - e.target.height / 2 < 0) {
                 h = 35
@@ -2284,38 +2302,29 @@
             else {
                 w = e.changedTouches[0].clientX - yoyo - e.target.width
             }
-            const image_qq = new fabric.Image(movingImage, {
-                width: movingImage.naturalWidth,
-                height: movingImage.naturalHeight,
-                scaleX: movingImage.width / movingImage.naturalWidth,
-                scaleY: movingImage.height / movingImage.naturalHeight,
+            const image_qq = new fabric.Image(imagearrayimage, {
+                width: imagearrayimage.naturalWidth,
+                height: imagearrayimage.naturalHeight,
+                scaleX: imagearrayimage.width / imagearrayimage.naturalWidth,
+                scaleY: imagearrayimage.height / imagearrayimage.naturalHeight,
                 top: h,
-                left: w,
+                left: w + imagearrayimage.naturalWidth / 4,
                 // top: (offsetY - imgDragOffset.offsetY + jiji * 8.5) < 0 ? 35 : (offsetY - imgDragOffset.offsetY + jiji * 8.5),
                 // left: (offsetX - imgDragOffset.offsetX + popo),
                 lockScalingFlip: true
             })
 
 
+            // canvas.add(image_qq)
             image_qq.set({
                 borderColor: 'rgba(0,0,0,0)'
             })
             allpic = allpic + 1
             canvas.add(image_qq)
-            image_q.push(image_qq) 
+
+            image_q.push(image_qq)
         }
-        // function handleFile() {
-        //     const fileReader = new FileReader();
-        //     fileReader.readAsDataURL(this.files[0])
-        //     fileReader.onload = (e) => {
-        //         // 圖片 base64
-        //         const dataURL = e.target.result
-        //         const img = document.createElement('img')
-        //         img.draggable = true
-        //         img.src = dataURL
-        //         imgset.appendChild(img)
-        //     }
-        // }
+
 
         var popo = $('.append_box_word').offset().left
         var allpic = 0
@@ -2330,14 +2339,27 @@
             //     canvas.add(oSVG);
             //     canvas.renderAll();
             // });
-
+            let thisleft = offsetX - imgDragOffset.offsetX + popo
+            if (thisleft < 0) {
+                thisleft = 35 * sR
+            }
+            if (thisleft + movingImage.width + 35 * sR > $('.canvas_wrapper').width()) {
+                thisleft = $('.canvas_wrapper').width() - movingImage.width - 35 * sR
+            }
+            let thistop = offsetY - imgDragOffset.offsetY / 2
+            if (thistop < 0) {
+                thistop = 35 * sR
+            }
+            if (thistop + movingImage.height + 35 * sR > $('.canvas_wrapper').height()) {
+                thistop = $('.canvas_wrapper').height() - movingImage.height - 35 * sR
+            }
             const image_qq = new fabric.Image(movingImage, {
                 width: movingImage.naturalWidth,
                 height: movingImage.naturalHeight,
                 scaleX: movingImage.width / movingImage.naturalWidth,
                 scaleY: movingImage.height / movingImage.naturalHeight,
-                top: (offsetY - imgDragOffset.offsetY + jiji * 8.5) < 0 ? 35 : (offsetY - imgDragOffset.offsetY + jiji * 8.5),
-                left: (offsetX - imgDragOffset.offsetX + popo),
+                top: thistop,
+                left: thisleft,
                 lockScalingFlip: true
             })
             // fabric.loadSVGFromURL(movingSrc, function (objects, options) {
@@ -2364,9 +2386,13 @@
             image_qq.set({
                 borderColor: 'rgba(0,0,0,0)'
             })
+
+            image_q.push(image_qq)
+
             allpic = allpic + 1
+
             canvas.add(image_qq)
-            image_q.push(image_qq) 
+
             movingImage = ""
         }
 
@@ -2375,9 +2401,20 @@
         // canvas.addEventListener('mouseup', dropImg)
         // alert(isAndroid)
         // if (isAndroid || isiOS) {
-        document.oncontextmenu = function (e) {
-            e.preventDefault();
-        };
+
+
+        // 右鍵
+        // document.oncontextmenu = function (e) {
+        //     e.preventDefault();
+        // };
+
+
+
+
+
+
+
+
         // defaultImg.addEventListener('touchstart', saveImg)
         // imgset.addEventListener('touchstart', saveImg)
         // canvas.on('mouse:up', dropImg)
@@ -2412,55 +2449,55 @@
 
 
         if (sR > 0.30) {
-                    fabric.Object.prototype.customiseCornerIcons({
-                        settings: {
-                            borderColor: 'black',
-                            cornerSize: 50 * sR,
-                            cornerShape: 'circle',
-                            cornerBackgroundColor: 'rgba(0,0,0,0)',
-                            cornerPadding: -20
-                        },
+            fabric.Object.prototype.customiseCornerIcons({
+                settings: {
+                    borderColor: 'black',
+                    cornerSize: 50 * sR,
+                    cornerShape: 'circle',
+                    cornerBackgroundColor: 'rgba(0,0,0,0)',
+                    cornerPadding: -20
+                },
 
-                        tr: {
+                tr: {
 
-                            icon: 'img/page/ax.png',
-                        },
-                        br: {
-                            settings: {
-                                borderColor: '#0094dd',
+                    icon: 'img/page/ax.png',
+                },
+                br: {
+                    settings: {
+                        borderColor: '#0094dd',
 
-                                cornerShape: 'circle',
-                            },
-                            icon: 'img/page/al.png'
-                        },
-                    }, function () {
-                        canvas.renderAll()
-                    })
-                }
-                if (sR <= 0.30) {
-                    fabric.Object.prototype.customiseCornerIcons({
-                        settings: {
-                            borderColor: 'black',
-                            cornerSize: 10 * sR,
-                            cornerShape: 'circle',
-                            cornerBackgroundColor: 'rgba(0,0,0,0)',
-                            cornerPadding: -20
-                        },
+                        cornerShape: 'circle',
+                    },
+                    icon: 'img/page/al.png'
+                },
+            }, function () {
+                canvas.renderAll()
+            })
+        }
+        if (sR <= 0.30) {
+            fabric.Object.prototype.customiseCornerIcons({
+                settings: {
+                    borderColor: 'black',
+                    cornerSize: 10 * sR,
+                    cornerShape: 'circle',
+                    cornerBackgroundColor: 'rgba(0,0,0,0)',
+                    cornerPadding: -20
+                },
 
-                        tr: {
+                tr: {
 
-                            icon: 'img/page/ax.png',
-                        
-                        },
-                        br: {
-                  
-                            icon: 'img/page/al.png'
-                        },
-                    }, function () {
-                        canvas.renderAll()
-                    })
-                }
-            
+                    icon: 'img/page/ax.png',
+
+                },
+                br: {
+
+                    icon: 'img/page/al.png'
+                },
+            }, function () {
+                canvas.renderAll()
+            })
+        }
+
 
 
 
@@ -2472,10 +2509,9 @@
             },
             tr: {
                 action: function () {
-                    canvas.getActiveObjects().forEach((obj) => {
-                        canvas.remove(obj)
-                    });
-                    canvas.discardActiveObject().renderAll()
+                    var activeObject = canvas.getActiveObject()
+                    canvas.remove(activeObject);
+
 
                 },
                 cursor: 'pointer'
@@ -2523,118 +2559,37 @@
 
             canvas.renderAll()
         })
+        var left1 = 0;
+        var top1 = 0;
+        var scale1x = 0;
+        var scale1y = 0;
+        var width1 = 0;
+        var height1 = 0;
+        var angle = 0
+
         canvas.on('object:scaling', (e) => {
-            let yoyo = $('.canvas_wrapper').offset().left
-            let doit = e.e.clientX - 40 > spcial_move + $('.canvas_wrapper').width() + yoyo
-            let targetH = e.target.scaleY
+            var obj = e.target;
+            // obj.set('strokeWidth', 50)
 
-            let canvasH = ($(".canvas_wrapper").height() - Math.ceil(e.target.top)) / e.target.height
-            // let targetH = e.target.scaleY
-            // let canvasH = ($(".canvas_wrapper").height() )/e.target.height
-            // console.log(targetH)
-            // console.log(canvasH)
-            console.log(e)
-            if(e.target.height>300){
-                if ($(".canvas_wrapper").height() >= 450) {
-                if (targetH > canvasH * 0.9) {
-                    e.target.scaleY = canvasH * 0.9
+            obj.setCoords();
+            var brNew = obj.getBoundingRect();
 
-                }
-                // console.log(oldimgX)
-                if (targetH > canvasH * 0.9) {
-                    canvas.getActiveObjects().forEach((obj) => {
-                        obj.scaleY = canvasH * 0.9
-                        obj.scaleX = canvasH * 0.9
-
-                    });
-                }
-            } else if ($(".canvas_wrapper").height() >= 250 && $(".canvas_wrapper").height() <= 450) {
-                if (targetH > canvasH * 0.9) {
-                    e.target.scaleY = canvasH * 0.9
-
-                }
-                // console.log(oldimgX)
-                if (targetH > canvasH * 0.9) {
-                    canvas.getActiveObjects().forEach((obj) => {
-                        obj.scaleY = canvasH * 0.9
-                        obj.scaleX = canvasH * 0.9
-
-                    });
-                }
+            if (((brNew.width + brNew.left) >= obj.canvas.width - (20 * sR)) || ((brNew.height + brNew.top) >= obj.canvas.height - (20 * sR)) || ((brNew.left < (20 * sR)) || (brNew.top < (20 * sR)))) {
+                obj.left = left1;
+                obj.top = top1;
+                obj.scaleX = scale1x;
+                obj.scaleY = scale1y;
+                obj.width = width1;
+                obj.height = height1;
             }
             else {
-                if (targetH > canvasH * 0.85) {
-                    e.target.scaleY = canvasH * 0.85
-
-                }
-                // console.log(oldimgX)
-                if (targetH > canvasH * 0.85) {
-                    canvas.getActiveObjects().forEach((obj) => {
-                        obj.scaleY = canvasH * 0.85
-                        obj.scaleX = canvasH * 0.85
-
-                    });
-                }
+                left1 = obj.left;
+                top1 = obj.top;
+                scale1x = obj.scaleX;
+                scale1y = obj.scaleY;
+                width1 = obj.width;
+                height1 = obj.height;
             }
-            }else{
-                if ($(".canvas_wrapper").height() >= 450) {
-                if (targetH > canvasH * 0.85) {
-                    e.target.scaleY = canvasH * 0.85
-
-                }
-                // console.log(oldimgX)
-                if (targetH > canvasH * 0.85) {
-                    canvas.getActiveObjects().forEach((obj) => {
-                        obj.scaleY = canvasH * 0.85
-                        obj.scaleX = canvasH * 0.85
-
-                    });
-                }
-            } else if ($(".canvas_wrapper").height() >= 250 && $(".canvas_wrapper").height() <= 450) {
-                if (targetH > canvasH * 0.85) {
-                    e.target.scaleY = canvasH * 0.85
-
-                }
-                // console.log(oldimgX)
-                if (targetH > canvasH * 0.85) {
-                    canvas.getActiveObjects().forEach((obj) => {
-                        obj.scaleY = canvasH * 0.85
-                        obj.scaleX = canvasH * 0.85
-
-                    });
-                }
-            }
-            else {
-                if (targetH > canvasH * 0.80) {
-                    e.target.scaleY = canvasH * 0.80
-
-                }
-                // console.log(oldimgX)
-                if (targetH > canvasH * 0.80) {
-                    canvas.getActiveObjects().forEach((obj) => {
-                        obj.scaleY = canvasH * 0.80
-                        obj.scaleX = canvasH * 0.80
-
-                    });
-                }
-            }
-            }
-
-
-      
-
-
-            console.log($(".canvas_wrapper").height())
-            Math.ceil(e.target.top)
-            // $(".canvas_wrapper").mouseleave(function(){
-            //     let targetH = e.target.scaleY
-            //     console.log(targetH)
-            // })
-            // if(e.target.scaleY>1.7){
-            //     canvas.getActiveObjects().forEach((obj) => {
-            //         obj.scaleY = 1.7
-            // });
-            // }
         })
         canvas.on('object:selected', (e) => {
             canvas.getActiveObjects().forEach((obj) => {
@@ -2647,48 +2602,27 @@
         })
 
         canvas.on('object:moving', (e) => {
-            console.log(e)
-            var w = 1920, h = 900;
-            var iw = $(window).innerWidth(), ih = $(window).innerHeight();
-            var pRatio = window.devicePixelRatio || 0, xRatio = iw / w, yRatio = ih / h, sRatio = 1;
-            sRatio = Math.min(xRatio, yRatio);
-            if (e.target.top < 50 * sRatio) {
-                canvas.getActiveObjects().forEach((obj) => {
-                    console.log(obj)
-                    obj.top = 50 * sRatio
 
-                });
-                // canvas.discardActiveObject().renderAll()
-                canvas.renderAll()
+            var obj = e.target;
+            // if object is too big ignore
+            if (obj.currentHeight > obj.canvas.height || obj.currentWidth > obj.canvas.width) {
+                return;
             }
-            if (e.target.left < 0) {
-                canvas.getActiveObjects().forEach((obj) => {
-                    console.log(obj)
-                    obj.left = 0
-
-                });
-                // canvas.discardActiveObject().renderAll()
-                canvas.renderAll()
+            obj.setCoords();
+            // top-left  corner
+            if (obj.getBoundingRect().top || obj.getBoundingRect().left) {
+                obj.top = Math.max(obj.top, obj.top + (35 * sR) - obj.getBoundingRect().top);
+                obj.left = Math.max(obj.left, obj.left + (35 * sR) - obj.getBoundingRect().left);
+            }
+            // bot-right corner
+            if (obj.getBoundingRect().top + obj.getBoundingRect().height > obj.canvas.height || obj.getBoundingRect().left + obj.getBoundingRect().width > obj.canvas.width) {
+                obj.top = Math.min(obj.top, obj.canvas.height - (35 * sR) - obj.getBoundingRect().height + obj.top - obj.getBoundingRect().top);
+                obj.left = Math.min(obj.left, obj.canvas.width - (35 * sR) - obj.getBoundingRect().width + obj.left - obj.getBoundingRect().left);
             }
 
-            if (e.target.top + (e.target.height * e.target.scaleX) + 50 * sRatio > $(".canvas_wrapper").height()) {
-                canvas.getActiveObjects().forEach((obj) => {
-                    // console.log(obj)
-                    obj.top = $(".canvas_wrapper").height() - (e.target.height * e.target.scaleX) - 50 * sRatio
+            obj.setCoords();
 
-                });
-                // canvas.discardActiveObject().renderAll()
-                canvas.renderAll()
-            }
-            if (e.target.left + (e.target.width * e.target.scaleY) + 50 * sRatio > $(".canvas_wrapper").width()) {
-                canvas.getActiveObjects().forEach((obj) => {
-                    // console.log(obj)
-                    obj.left = $(".canvas_wrapper").width() - (e.target.width * e.target.scaleY) - 50 * sRatio
 
-                });
-                // canvas.discardActiveObject().renderAll()
-                canvas.renderAll()
-            }
         })
 
 
@@ -2699,7 +2633,7 @@
                     fabric.Object.prototype.customiseCornerIcons({
                         settings: {
                             borderColor: 'black',
-                            cornerSize: 80*sR,
+                            cornerSize: 80 * sR,
                             cornerShape: 'circle',
                             cornerBackgroundColor: 'rgba(0,0,0,0)',
                         },
@@ -2732,10 +2666,10 @@
                         tr: {
 
                             icon: 'img/page/ax.png',
-                        
+
                         },
                         br: {
-                  
+
                             icon: 'img/page/al.png'
                         },
                     }, function () {
