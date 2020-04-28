@@ -101,7 +101,7 @@
             grid-template-areas:
                 "grid4 grid3 grid2 grid1 "
                 "grid8 grid7 grid6 grid5"
-                "grid100 grid101 grid102 grid103 ";
+                "grid103 grid102 grid101 grid100 ";
         }
 
 
@@ -140,7 +140,21 @@
         .grid9 {
             grid-area: grid9;
         }
+        .grid100 {
+            grid-area: grid100;
+        }
 
+        .grid101 {
+            grid-area: grid101;
+        }
+
+        .grid102 {
+            grid-area: grid102;
+        }
+
+        .grid103 {
+            grid-area: grid103;
+        }
         .ab {
             position: absolute;
         }
@@ -578,10 +592,7 @@
 
         }
 
-        .canvas-container {
-            background: red;
-            opacity: 0.5;
-        }
+       
 
         .opc0{
             opacity: 0;
@@ -930,7 +941,7 @@
             ke++
             // $(".outside_frame").append(`<div class=${} > </div>`)
             $(".append_box_word").empty()
-            console.log(page_area_1)
+           // console.log(page_area_1)
             $(".append_box_word").append(page_area_1)
             
 
@@ -995,7 +1006,7 @@
         $('.dotbox').on("click", '.dot', function () {
             let index = $(".dotbox .dot").index(this);
             let indexlength = $(".dotbox .dot").length
-            console.log(indexlength)
+           // console.log(indexlength)
             control_display = index
             dot_control = true
             //     $(this).children("img").attr.attr(
@@ -1448,7 +1459,7 @@
             dot_control = true
 
             setword()
-            canvas.deactivateAll().renderAll()
+            // canvas.deactivateAll().renderAll()
 
             if ($('.pic_number').length >= 1) {
                 let pic_length = $('.pic_number').length
@@ -1460,6 +1471,7 @@
                     )
                 }
             }
+        //    console.log('jieji')
             $('.append_box_word').append(`
             <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.svg'  draggable>
             <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.svg'  draggable>
@@ -1844,7 +1856,7 @@
             // setword()
             // changeColor()
             // $('.layout-img').remove()
-            // console.log(control_btn)
+            //// console.log(control_btn)
             // if (control_btn == 4) {
 
             //     if ($('.pic_number').length >= 1) {
@@ -2007,10 +2019,10 @@
                 }
 
                 $('.append_box_word').append(`
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.png'  draggable>
-            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.png'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid100" src='img/page/0.svg'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid101" src='img/page/1.svg'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid102" src='img/page/2.svg'  draggable>
+            <img id="defaultImg" style=${b4_inline_style} class="pic_number grid103" src='img/page/3.svg'  draggable>
             `)
             }
             $(".out-layout").append(`<img src="img/page/a6c.png" class="layout-img"  alt="">`)
@@ -2034,7 +2046,7 @@
             // changeColor()
             // $('.layout-img').remove()
             // if (control_btn == 4) {
-            //     console.log(b4_inline_style)
+            //    // console.log(b4_inline_style)
             //     if ($('.pic_number').length >= 1) {
             //         let pic_length = $('.pic_number').length
             //         let pic_app = 8 - pic_length
@@ -2220,7 +2232,7 @@
         var oldimgY = ''
 
         function saveImg(e) {
-            console.log(e.target.src)
+           // console.log(e.target.src)
 
             if (e.target.tagName.toLowerCase() === 'img') {
                 movingSrc = e.target.src
@@ -2232,12 +2244,12 @@
             }
             canvas.discardActiveObject();
             canvas.renderAll();
-            // console.log(imgDragOffset)
+            //// console.log(imgDragOffset)
         }
         var jijo = ''
         function saveFoneImg(e) {
-            // console.log(e.targetTouches[0].clientX)
-            // console.log(e)
+            //// console.log(e.targetTouches[0].clientX)
+            //// console.log(e)
 
             if (e.target.tagName.toLowerCase() === 'img') {
 
@@ -2250,7 +2262,7 @@
 
             let copyObj = movingImage.cloneNode(true);
             document.body.appendChild(copyObj);
-            // console.log(e.targetTouches[0].clientY - e.target.offsetTop)
+            //// console.log(e.targetTouches[0].clientY - e.target.offsetTop)
             copyObj.style.position = "absolute"
             copyObj.style.top = e.target.y + "px"
             copyObj.style.left = e.target.x + "px"
@@ -2270,7 +2282,7 @@
 
 
             e.preventDefault();
-            console.log(e)
+           // console.log(e)
             jijo.style.transition = "none"
 
             jijo.style.top = e.targetTouches[0].clientY - e.target.height / 2 + "px"
@@ -2289,7 +2301,7 @@
             
             let offsetY = odY
             let offsetX = odX
-            console.log(movingImage.src)
+           // console.log(movingImage.src)
             let nowsrc = movingImage.src
             
             document.body.removeChild(jijo);
@@ -2346,7 +2358,7 @@
         var image_q = new Array()
         function dropImg(e) {
             const { offsetX, offsetY } = e.e
-            console.log(offsetY - imgDragOffset.offsetY + jiji * 2)
+           // console.log(offsetY - imgDragOffset.offsetY + jiji * 2)
             // var oSVG;
             // fabric.loadSVGFromURL(movingSrc, function (object) {
             //     oSVG = object.set({ left: 250, top: 200, angle: 0 });
@@ -2354,7 +2366,7 @@
             //     canvas.add(oSVG);
             //     canvas.renderAll();
             // });
-            console.log(e)
+           // console.log(e)
             let thisleft = offsetX - imgDragOffset.offsetX + popo
             if (thisleft < 0) {
                 thisleft = 35 * sR
@@ -2541,7 +2553,7 @@
                 action: "scale",
                 // function () {
                 //     canvas.on('mouse:down', e => {
-                //         console.log(e)
+                //        // console.log(e)
                 //     })
                 // },
                 cursor: 'pointer'
@@ -2609,7 +2621,7 @@
         })
         canvas.on('object:selected', (e) => {
             canvas.getActiveObjects().forEach((obj) => {
-                console.log(obj)
+               // console.log(obj)
                 canvas.bringToFront(obj)
             });
             // canvas.discardActiveObject().renderAll()
@@ -2644,7 +2656,7 @@
 
         canvas.on('mouse:up', e => {
             if (e.target) {
-                console.log(sR)
+               // console.log(sR)
                 if (sR > 0.30) {
                     fabric.Object.prototype.customiseCornerIcons({
                         settings: {
