@@ -582,7 +582,12 @@
             background: red;
             opacity: 0.5;
         }
-
+        .fff{
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 24px;
+        }
 
         .pic_number {
             -webkit-touch-callout: none !important;
@@ -703,7 +708,7 @@
 
         </div>
 
-
+        <div class="fff">HIHI</div>
 
     </div>
 
@@ -2319,7 +2324,7 @@
                 console.log(img1._element.naturalHeight)
                 img1._element.naturalHeight = movingImage.height
                 img1._element.naturalWidth = movingImage.width
-
+                $('.fff').text(img1._element.naturalHeight+','+ img1._element.naturalWidth )
                 img1.set({
                     borderColor: 'rgba(0,0,0,0)'
                 })
