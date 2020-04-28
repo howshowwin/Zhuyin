@@ -843,7 +843,7 @@
 
 
 
-
+        var ke =0 
 
         var setword = function () {
 
@@ -923,10 +923,13 @@
                     page_area_1 += ` <img id="defaultImg" style=${inline_style} class="pic_number grid${k + 1}" src='img/${array_all_cb[control_display][k]}'  draggable>`
                 }
             }
-            // $(".append_box_word").empty()
-
+            // $(".").empty()
+            ke++
+            // $(".outside_frame").append(`<div class=${} > </div>`)
+            $(".append_box_word").empty()
+            console.log(page_area_1)
             $(".append_box_word").append(page_area_1)
-
+            
 
             page = 0
 
@@ -2274,6 +2277,9 @@
             odY = e.targetTouches[0].clientY - e.target.height / 2
         }
         var push = false
+
+
+
         function pushimg(e) {
             let yoyo = $('.canvas_wrapper').offset().left
             let yoyot = $('.canvas_wrapper').offset().top
@@ -2314,13 +2320,13 @@
                 lockScalingFlip: true
             })
 
-
             // canvas.add(image_qq)
             image_qq.set({
                 borderColor: 'rgba(0,0,0,0)'
             })
             allpic = allpic + 1
             canvas.add(image_qq)
+            image_qq.setCoords();
 
             image_q.push(image_qq)
         }
@@ -2341,6 +2347,7 @@
             //     canvas.add(oSVG);
             //     canvas.renderAll();
             // });
+            console.log(e)
             let thisleft = offsetX - imgDragOffset.offsetX + popo
             if (thisleft < 0) {
                 thisleft = 35 * sR
